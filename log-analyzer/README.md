@@ -40,7 +40,7 @@ alice = suspicious (3 failed attempts)
 ## 🚀 How to Run
 1. Clone this repo  
    ```bash
-   git clone https://github.com/your-username/python-projects.git
+   https://github.com/nanayaa-baffoe/python-projects
 
 Navigate into the folder:
 
@@ -50,3 +50,25 @@ cd python-projects/log-analyzer
 Run the script:
 
 python log_analyzer.py sample.txt
+
+🔐 SOC Analyst Connection
+
+In real-world SOC operations, log analysis is a critical skill. Analysts often look for:
+
+Multiple failed logins (brute force)
+
+Repeated attempts from the same IP
+
+Unusual login patterns
+
+This project is a mini-simulation of that process using Python.
+
+✅ Next Improvements
+
+Add regex for more precise log parsing
+
+Write suspicious activity to a report file (suspicious_report.txt)
+
+Extend detection to include unusual time-based login patterns
+
+
