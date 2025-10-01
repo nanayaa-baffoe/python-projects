@@ -1,11 +1,20 @@
-2025-09-10 10:15:32 - LOGIN SUCCESS - user: alice - ip: 192.168.1.10
-2025-09-10 10:17:10 - LOGIN FAIL - user: alice - ip: 192.168.1.10
-2025-09-10 10:18:05 - LOGIN FAIL - user: alice - ip: 192.168.1.10
-2025-09-10 10:19:15 - LOGIN SUCCESS - user: bob - ip: 192.168.1.20
-2025-09-10 10:20:01 - LOGIN FAIL - user: alice - ip: 192.168.1.10
-2025-09-10 10:21:40 - LOGIN FAIL - user: charlie - ip: 192.168.1.30
-2025-09-10 10:22:11 - LOGIN FAIL - user: charlie - ip: 192.168.1.30
-2025-09-10 10:23:50 - LOGIN SUCCESS - user: charlie - ip: 192.168.1.30
-2025-09-10 10:24:35 - LOGIN FAIL - user: david - ip: 192.168.1.40
-2025-09-10 10:25:20 - LOGIN FAIL - user: david - ip: 192.168.1.40
-2025-09-10 10:26:45 - LOGIN FAIL - user: david - ip: 192.168.1.40
+192.168.1.10 - - [01/Oct/2025:08:45:10] "GET /index.html"
+10.0.0.5 - - [01/Oct/2025:08:45:12] "POST /login"
+192.168.1.10 - - [01/Oct/2025:08:45:14] "POST /login"
+203.0.113.55 - - [01/Oct/2025:08:45:16] "GET /admin"
+192.168.1.10 - - [01/Oct/2025:08:45:20] "POST /login"
+198.51.100.23 - - [01/Oct/2025:08:45:25] "GET /products"
+192.168.1.15 - - [01/Oct/2025:08:45:30] "GET /cart"
+203.0.113.55 - - [01/Oct/2025:08:45:35] "POST /admin"
+192.168.1.10 - - [01/Oct/2025:08:45:40] "POST /login"
+10.0.0.5 - - [01/Oct/2025:08:45:45] "GET /dashboard"
+192.168.1.20 - - [01/Oct/2025:08:45:50] "GET /index.html"
+198.51.100.23 - - [01/Oct/2025:08:45:55] "POST /checkout"
+192.168.1.15 - - [01/Oct/2025:08:46:00] "GET /profile"
+203.0.113.55 - - [01/Oct/2025:08:46:05] "GET /admin"
+192.168.1.10 - - [01/Oct/2025:08:46:10] "POST /login"
+10.0.0.5 - - [01/Oct/2025:08:46:15] "POST /settings"
+192.168.1.30 - - [01/Oct/2025:08:46:20] "GET /search?q=cybersecurity"
+198.51.100.23 - - [01/Oct/2025:08:46:25] "GET /products?id=123"
+192.168.1.10 - - [01/Oct/2025:08:46:30] "POST /login"
+203.0.113.55 - - [01/Oct/2025:08:46:35] "POST /admin"
