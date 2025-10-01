@@ -5,36 +5,36 @@
 
 
 
-
-
-fname = input("Please enter the file name: ")
+from operator import itemgetter
+fname = input('Enter log filename : ')
 fhandle = open(fname)
 
-# Dictionaries to track failures
-user_failures = {}
-ip_failures = {}
-
+display = int(input('Enter how many top IPs to display: '))
+threshold = int(input('Enter suspicious threshold: '))
+ip_address = {}
 for line in fhandle:
-    words = line.split()
+    line = line.strip()
+    if line:
+        address=  line.split()[0]
+        ip_address[address] = ip_address.get(address , 0)+1
+new_list = list(ip_address.items())
+new_list.sort(key= itemgetter(1) , reverse=True)
 
-    if "FAIL" in words:  #Check if this was a failed login
-        user = words[7]  # extract username
-        ip = words[9]    # extract IP address
+top_display = new_list[0:display]
 
-        # Count user failures
-        user_failures[user] = user_failures.get(user, 0) + 1
+result = []
+for key , value in top_display:
+    if value >= threshold:
+        label = 'suspicious'
+    else:
+        label = 'normal'
+    output = f'{key}: {value}: {label}' 
+    print(output)
+    result.append(output)
+        
+    
 
-        # Count IP failures
-        ip_failures[ip] = ip_failures.get(ip, 0) + 1
+with open('report.txt', 'w') as file:
+    file.write('\n'.join(result))
 
-# Suspicious users
-print("\nSuspicious Users:")
-for user, count in user_failures.items():
-    if count >= 3:
-        print(f"{user} = suspicious ({count} failed attempts)")
-
-# Suspicious IPs
-print("\nSuspicious IPs:")
-for ip, count in ip_failures.items():
-    if count >= 3:
-        print(f"{ip} = suspicious ({count} failed attempts)")
+print('successfully uploaded')
