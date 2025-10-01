@@ -1,53 +1,53 @@
-# 📝 Log Analyzer
 
-This project is a beginner-friendly **Python log analyzer** that detects suspicious login attempts from system logs.  
+📝 Log Analyzer
 
----
+This project is a beginner-friendly Python log analyzer that detects suspicious login attempts from system logs.
 
-## 📖 Project Description
-- The script reads a `.txt` file containing login attempts.  
-- It counts the number of failed login attempts per **user** and **IP address**.  
-- If any user/IP has **3 or more failed attempts**, the script flags it as **suspicious**.  
+📖 Project Description
 
-This is a simple demonstration of how **SOC analysts** monitor logs to detect brute-force attacks or compromised accounts.
+Reads a .txt file containing login attempts
 
----
+Counts the number of attempts per IP address
 
-## 🛠️ Skills Practiced
-- File handling in Python (`open()`, loops, line parsing)  
-- String operations and `split()`  
-- Using **dictionaries** to track counts  
-- Conditional logic to flag suspicious behavior  
+Flags an IP as suspicious if its request count is above a defined threshold
 
----
+This is a simple demonstration of how SOC analysts monitor logs to detect brute-force attacks or compromised accounts.
 
-## 📂 Example Input (sample log file)
-Sep 11 07:32:10 server sshd[1234]: Failed password for alice from 192.168.1.5 port 22 ssh2
-Sep 11 07:32:15 server sshd[1235]: Failed password for alice from 192.168.1.5 port 22 ssh2
-Sep 11 07:32:20 server sshd[1236]: Failed password for alice from 192.168.1.5 port 22 ssh2
-Sep 11 07:33:01 server sshd[1237]: Accepted password for bob from 10.0.0.8 port 22 ssh2
+🛠️ Skills Practiced
+
+File handling in Python (open(), loops, line parsing)
+
+String operations and split()
+
+Dictionaries for event counting
+
+Conditional logic to flag suspicious behavior
+
+📂 Example Input (sample log file)
+192.168.1.10 - - [01/Oct/2025:08:45:10] "GET /index.html"
+10.0.0.5 - - [01/Oct/2025:08:45:12] "POST /login"
+192.168.1.10 - - [01/Oct/2025:08:45:14] "POST /login"
+203.0.113.55 - - [01/Oct/2025:08:45:16] "GET /admin"
+192.168.1.10 - - [01/Oct/2025:08:45:20] "POST /login"
+
+🖥️ Example Output
+192.168.1.10: 3: suspicious
+10.0.0.5: 1: normal
+203.0.113.55: 1: normal
+
+🚀 How to Run
+
+Clone this repo
+
+git clone https://github.com/nanayaa-baffoe/python-projects
 
 
----
-
-## 🖥️ Example Output
-192.168.1.5 = suspicious (3 failed attempts)
-alice = suspicious (3 failed attempts)
-
-
----
-
-## 🚀 How to Run
-1. Clone this repo  
-   ```bash
-   https://github.com/nanayaa-baffoe/python-projects
-
-Navigate into the folder:
+Navigate into the folder
 
 cd python-projects/log-analyzer
 
 
-Run the script:
+Run the script
 
 python log_analyzer.py sample.txt
 
@@ -55,20 +55,18 @@ python log_analyzer.py sample.txt
 
 In real-world SOC operations, log analysis is a critical skill. Analysts often look for:
 
-Multiple failed logins (brute force)
+Multiple failed logins (brute-force attempts)
 
-Repeated attempts from the same IP
+Repeated requests from the same IP
 
-Unusual login patterns
+Unusual or abnormal access patterns
 
 This project is a mini-simulation of that process using Python.
 
 ✅ Next Improvements
 
-Add regex for more precise log parsing
+ Add regex for more precise log parsing
 
-Write suspicious activity to a report file (suspicious_report.txt)
+ Write suspicious activity to a report file (report.txt)
 
-Extend detection to include unusual time-based login patterns
-
-
+ Extend detection to include time-based anomalies in login attempts
