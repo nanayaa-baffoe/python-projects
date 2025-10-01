@@ -23,11 +23,11 @@ Folder: log-analyzer/
 
 🌟 Why This Repo?
 
-To document my learning journey in Python + Cybersecurity.
+To document my learning journey in Python + Cybersecurity
 
-To practice SOC analyst skills with small, practical projects.
+To practice SOC analyst skills with small, practical projects
 
-To build a portfolio I can showcase on GitHub and LinkedIn.
+To build a portfolio I can showcase on GitHub and LinkedIn
 
 📌 Next Steps
 
@@ -38,3 +38,5 @@ To build a portfolio I can showcase on GitHub and LinkedIn.
  Create a Network Access Simulator
 
  Explore advanced SOC projects (packet capture analysis, phishing detection, etc.)
+
+💡 This repository will keep growing as I continue my 1-year SOC journey.
